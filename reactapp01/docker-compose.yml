@@ -1,0 +1,12 @@
+version: '3'
+services:
+  reactapp01:
+    container_name: reactapp01
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/reactapp01
+    command: sh -c "cd sample_app && npm run dev"
+    ports:
+      - 8080:3000
